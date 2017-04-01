@@ -1,0 +1,97 @@
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "25.0.2"
+    androidMinSdkVersion = 19
+    androidTargetSdkVersion = 25
+    androidCompileSdkVersion = 25
+    supportLibraryVersion = '25.1.1'
+
+    //Kotlin
+    rxKotlinVersion = '2.0.0-RC1'
+    ankoPluginVersion = '0.9.1'
+
+    //Third party libraries
+    daggerVersion = '2.9'
+    rxJavaVersion = '2.0.7'
+    rxAndroidVersion = '2.0.1'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    gsonVersion = '2.7'
+    retrofitVersion = '2.2.0'
+    dexterVersion = '2.3.1'
+    okHttpParamsInterceptorVersion = 'v0.9'
+    okHttpVersion = '3.6.0'
+    constraintLayoutVersion = '1.0.2'
+    glideVersion = '3.7.0'
+
+    //Development
+    leakCanaryVersion = '1.5'
+
+    //Unit Testing
+    robolectricVersion = '3.2.2'
+    junitVersion = '4.12'
+    mockitoKotlinVersion = '1.1.0'
+    kluentVersion = '1.14'
+
+    //Aceptance Testing
+    runnerVersion = '0.5'
+    espressoVersion = '2.2.2'
+
+    compileTimeDependencies = [daggerCompiler          : "com.google.dagger:dagger-compiler:${daggerVersion}",
+                               javaxAnnotation         : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+                               javaxInject             : "javax.inject:javax.inject:${javaxInjectVersion}"]
+
+    commonDependencies = [kotlinStdLib            : "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}",
+                          dagger                  : "com.google.dagger:dagger:${daggerVersion}",
+                          rxJava                  : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                          rxAndroid               : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+                          rxKotlin                : "io.reactivex:rxkotlin:${rxKotlinVersion}",
+                          supportAnnotations      : "com.android.support:support-annotations:${supportLibraryVersion}"]
+
+    dataDependencies = [retrofit2               : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+                        retrofit2Converter      : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+                        retrofit2RxAdapter      : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+                        gson                    : "com.google.code.gson:gson:${gsonVersion}",
+                        okHttpParamsInterceptor : "com.github.jkyeo:okhttp-basicparamsinterceptor:${okHttpParamsInterceptorVersion}",
+                        okHttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"]
+
+    domainDependencies = []
+
+    presentationDependencies = [supportRecyclerView : "com.android.support:recyclerview-v7:${supportLibraryVersion}",
+                                supportCardView     : "com.android.support:cardview-v7:${supportLibraryVersion}",
+                                supportGridLayout   : "com.android.support:gridlayout-v7:${supportLibraryVersion}",
+                                supportDesign       : "com.android.support:design:${supportLibraryVersion}",
+                                supportAppCompat    : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+                                anko                : "org.jetbrains.anko:anko-sdk15:${ankoPluginVersion}",
+                                anko_v4_support     : "org.jetbrains.anko:anko-support-v4:${ankoPluginVersion}",
+                                anko_v7_support     : "org.jetbrains.anko:anko-appcompat-v7:${ankoPluginVersion}",
+                                glide               : "com.github.bumptech.glide:glide:${glideVersion}",
+                                constraintLayout    : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}"]
+
+    development = [
+            leakCanary:         "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            leakCanaryNoop:     "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
+    ]
+
+    unitTesting = [
+            kotlinTest:         "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}",
+            robolectric:        "org.robolectric:robolectric:${robolectricVersion}",
+            junit:              "junit:junit:${junitVersion}",
+            mockitoKotlin:      "org.mockito:mockito-core:${mockitoKotlinVersion}",
+            kluent:             "org.amshove.kluent:kluent:${kluentVersion}",
+            kotlinStdLib:       "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}"]
+
+    acceptanceTesting = [
+            testRunner:         "com.android.support.test:runner:${runnerVersion}",
+            testRules:          "com.android.support.test:rules:${runnerVersion}",
+            espressoCore:       "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            espressoIntents:    "com.android.support.test.espresso:espresso-intents:${espressoVersion}",
+            androidAnnotations: "com.android.support:support-annotations:${supportLibraryVersion}"]
+}
