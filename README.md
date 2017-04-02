@@ -1,4 +1,4 @@
-Android Kotlin Clean Architecture [![Build Status](https://travis-ci.org/ricardoAntolin/androidKotlinCleanArchitecture.svg?branch=master)](https://travis-ci.org/ricardoAntolin/androidKotlinCleanArchitecture)
+Android Kotlin Clean Architecture [![Build Status](https://travis-ci.org/ricardoAntolin/androidKotlinCleanArchitecture.svg?branch=master)](https://travis-ci.org/ricardoAntolin/androidKotlinCleanArchitecture) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android--Kotlin--CleanArchitecture-green.svg?style=true)](https://android-arsenal.com/details/3/5501)
 =================================
 
 Android architecture based on:
